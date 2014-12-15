@@ -1,4 +1,18 @@
-module.exports.stream = undefined;
+module.exports.stream = function(conditionalFn,actionFn) {
+  while (conditionalFn() != false ) {
+    actionFn();
+  }
+};
 
-module.exports.sumNumbers = undefined;
+
+
+
+
+module.exports.sumNumbers = function(numbers) {
+  var sum = 0;
+  for (var i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  return sum;
+};
 
